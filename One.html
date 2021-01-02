@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios primer video</title>
+  </head>
+  <body>
+    <script>
+      //Contar caracteres de una cadena de texto
+
+      function cantidadCaracteres(texto) {
+        return `La cantidad de caracteres del texto ingresado es: ${texto.length}`;
+      }
+
+      // let texto = prompt("Por favor ingrese una cadena de texto para contar sus caracteres: ");
+
+      // console.log(cantidadCaracteres(texto));
+
+      //Trimar un texto
+
+      function trimarCadena(texto, numCaracteres) {
+        return `El texto convertido es: ${texto.substring(0, numCaracteres)}`;
+      }
+
+      // let texto_dos = prompt("Por favor ingrese una frase: ");
+      // let cuantos = prompt("¿Cuántos caracteres desea mostrar?");
+
+      // console.log(trimarCadena(texto_dos, cuantos));
+
+      //Converte una cadena en un array
+
+      function convertirCadena(texto, separador) {
+        return texto.split(separador);
+      }
+
+      // let texto = prompt('Por favor ingrese un texto: ');
+      // let separador = prompt("Por favor ingrese el caracter que separará la cadena: ");
+
+      // console.log(convertirCadena(texto, separador));
+
+      //Repetir cadena
+
+      function repetirCadena(texto, veces) {
+        for (let i = 0; i < veces; i++) {
+          console.log(texto);
+        }
+      }
+
+      let texto = prompt("Por favor ingrese una cadena de texto: ");
+      let cantidad = prompt("¿Cuántas veces desea imprimira en consola? ");
+
+      repetirCadena(texto, cantidad);
+    </script>
+  </body>
+</html>
