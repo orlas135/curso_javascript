@@ -8,49 +8,66 @@
   <body>
     <script>
       //Contar caracteres de una cadena de texto
+      const cantidadCaracteres = (texto = "") =>
+        !texto
+          ? console.warn("No ingresaste ningún texto")
+          : console.info(
+              `La cantidad de caracteres del string ingresado es: ${texto.length}`
+            );
 
-      function cantidadCaracteres(texto) {
-        return `La cantidad de caracteres del texto ingresado es: ${texto.length}`;
-      }
-
-      // let texto = prompt("Por favor ingrese una cadena de texto para contar sus caracteres: ");
-
-      // console.log(cantidadCaracteres(texto));
+      //let texto = prompt("Por favor ingrese una cadena de texto para contar sus caracteres: ");
+      //cantidadCaracteres(texto);
 
       //Trimar un texto
+      const trimarCadena = (texto = "", numCaracteres = undefined) => {
+        !texto
+          ? console.warn("No ingresaste el texto")
+          : numCaracteres === undefined
+          ? console.warn("No ingresaste la longitud para recortar la cadena")
+          : console.info(`Cadena convertida: ${texto.slice(0, numCaracteres)}`);
+      };
 
-      function trimarCadena(texto, numCaracteres) {
-        return `El texto convertido es: ${texto.substring(0, numCaracteres)}`;
-      }
+      //let texto_dos = prompt("Por favor ingrese una frase: ");
+      //let cuantos = prompt("¿Cuántos caracteres desea mostrar?");
+      //trimarCadena(texto_dos, cuantos);
 
-      // let texto_dos = prompt("Por favor ingrese una frase: ");
-      // let cuantos = prompt("¿Cuántos caracteres desea mostrar?");
 
-      // console.log(trimarCadena(texto_dos, cuantos));
+      //Convierte una cadena en un array
+      const convertirCadena = (texto = "", separador = undefined) => {
+        !texto
+          ? console.log("No ingresaste ningún texto")
+          : !separador || separador === undefined
+          ? console.log("No ingresaste el caracter para separar la cadena")
+          : console.info(texto.split(separador));
+      };
 
-      //Converte una cadena en un array
+      //let texto = prompt("Por favor ingrese un texto: ");
+      //let separador = prompt("Por favor ingrese el caracter que separará la cadena: ");
+      //convertirCadena(texto, separador);
 
-      function convertirCadena(texto, separador) {
-        return texto.split(separador);
-      }
-
-      // let texto = prompt('Por favor ingrese un texto: ');
-      // let separador = prompt("Por favor ingrese el caracter que separará la cadena: ");
-
-      // console.log(convertirCadena(texto, separador));
 
       //Repetir cadena
+      const repetirCadena = (texto, veces) => {
+        if (!texto)
+          return console.warn("No se ingresó ninguna cadena de texto");
 
-      function repetirCadena(texto, veces) {
-        for (let i = 0; i < veces; i++) {
-          console.log(texto);
-        }
-      }
+        if (veces === undefined)
+          return console.warn(
+            "No se ingresó el número de veces a repetir el texto"
+          );
 
-      let texto = prompt("Por favor ingrese una cadena de texto: ");
-      let cantidad = prompt("¿Cuántas veces desea imprimira en consola? ");
+        if ((veces === 0))
+          return console.log("El número de veces no puede ser cero");
 
-      repetirCadena(texto, cantidad);
+        if (Math.sign(veces) === -1)
+          return console.log("El número de veces no puede ser negativo");
+
+        for (let i = 1; i <= veces; i++) console.log(`${texto} - ${i}`);
+      };
+
+      // let texto = prompt("Por favor ingrese una cadena de texto: ");
+      // let cantidad = prompt("¿Cuántas veces desea imprimirla en consola? ");
+      // repetirCadena(texto, cantidad);
     </script>
   </body>
 </html>

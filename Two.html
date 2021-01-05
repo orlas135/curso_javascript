@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios segundo video</title>
+  </head>
+  <body>
+    <script>
+      //Invertir el sentido de una cadena de texto
+      const invertirTexto = (texto) =>
+        !texto
+          ? console.warn("No ingresaste ningún valor")
+          : texto.split("").reverse().join("");
+      console.info(invertirTexto("Hola mundo"));
+
+      //Contar cuántas veces aparece una palabra en una cadena de texto
+      const contarPalabra = (cadena, palabra) => {
+        if (!cadena) console.warn("No ingresaste ninguna cadena");
+        if (!palabra)
+          console.warn(
+            "No ingresaste la palabra para buscar en el texto largo"
+          );
+
+        let i = 0,
+          contador = 0;
+
+        while (i !== -1) {
+          i = cadena.indexOf(palabra, i);
+          if (i !== -1) {
+            i++;
+            contador++;
+          }
+        }
+        return console.info(
+          `La palabra ${palabra} se repite ${contador} veces.`
+        );
+      };
+
+      //Validar si una palabra es un palíndromo
+      const palindromo = (texto) => {
+        if (!texto) console.warn("No enviaste ningún texto para examinar");
+
+        texto = texto.toLowerCase();
+        palabra = texto.split("").reverse().join("");
+
+        return palabra === texto
+          ? console.info(
+              `Sí es un palíndromo. Palabra original: ${texto} - Palabra al revés: ${palabra}`
+            )
+          : console.info(
+              `No es un palíndromo. Palabra original: ${texto} - Palabra al revés: ${palabra}`
+            );
+      };
+
+      palindromo("oso");
+
+      const reemplazar = (texto, patron) => {
+        !texto
+          ? console.warn("No enviaste ningún texto a evaluar")
+          : !patron
+          ? console.warn("No enviaste ningún patrón")
+          : console.info(texto.replace(new RegExp(patron, "ig"), ""));
+      };
+
+      reemplazar("xyz1, xyz2, xyz3, xyz4, xyz5", "xyz");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three</title>
+</head>
+<body>
+  
+  <script>
+    function obtenerAleatorio (minimo, maximo) {
+      return Math.round(Math.random() * (maximo - minimo) + minimo) ;
+    }
+
+    //console.log(obtenerAleatorio(500,601));
+
+    const capicua = (numero) => {
+      numero = numero.toString();
+      let valor = numero.split('').reverse().join('');
+      
+      (numero === valor)
+      ? console.info("Sí, el número es capicua") : console.info("No, el número no es capicua");
+    }
+    //capicua(504);
+
+    const factorial = (numero) => {
+      let factorial = 1;
+      for(let i = numero; i > 1; i--) {
+        factorial = factorial * i;
+      }
+
+      return factorial;
+    }
+
+    console.log(factorial(5));
+  </script>
+
+</body>
+</html>

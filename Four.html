@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Four</title>
+  </head>
+  <body>
+    <script>
+      const esPrimo = (numero) => {
+        if (!numero) return console.warn(`No enviaste ningún número`);
+        if (typeof numero !== "number")
+          return console.error(`El valor enviado "${numero}", no es un número`);
+        if (numero === 0)
+          return console.warn(`El valor no puede ser un cero (0)`);
+        if (numero === 1) return console.warn(`El número es primo`);
+        if (numero === 2) return console.info(`El número ${numero} es primo.`);
+        if (numero < 0)
+          return console.warn(`El valor no puede ser un número negativo`);
+
+        let divisible = false;
+
+        for (let i = 2; i < numero; i++) {
+          if (numero % i === 0) {
+            divisible = true;
+            break;
+          }
+        }
+        return divisible
+          ? console.log(`El número ${numero} no es primo`)
+          : console.log(`El número ${numero} sí es primo`);
+      };
+
+      //esPrimo(7);
+      //esPrimo(51);
+      //esPrimo(13);
+
+      const parImpar = (numero) => {
+        !numero
+          ? console.log("No enviaste un número para evaluar")
+          : typeof numero !== "number"
+          ? console.log("El parámetro ingresado no es un número")
+          : numero % 2 == 0
+          ? console.log("El número es par")
+          : console.log("El número es impar");
+      };
+
+      const celsiusFahrenheit = (grados, unidad) => 
+      {
+        if (!grados) return console.warn("No ingresaste los grados a convertir");
+        if(!unidad) return console.warn("No ingresaste la unidad que quieres convertir");
+        if(typeof grados !== "number") return console.warn("No se permite un tipo de dato diferente de número en los grados.");
+        if(typeof unidad !== "string") return console.warn("No se permite un tipo de dato diferente de cadena en la unidad.");
+        if(unidad.length !== 1 || !/(C|F)/.test(unidad)) return console.log("Valor de unidad no reconocido");
+
+        if (unidad === "C") {
+          return console.log(`${grados} C° equivalen a ${Math.round((grados*(9/5)) + 32)} °F`);
+        } else if (unidad === "F") {
+          return console.log(`${grados} F° equivalen a ${Math.round(((grados - 32 ) * (5/9)))} °C`);
+        } else {
+          return console.warn("El tipo de grados a convertir no es válido");
+        }
+      }
+
+      celsiusFahrenheit(100, "F");
+    </script>
+  </body>
+</html>
