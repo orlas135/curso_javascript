@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Five</title>
+</head>
+<body>
+
+  <script>
+    const decimalBinario = (numero = undefined, tipoBase = undefined) => {
+      if(!numero) return console.warn("No se envío ningún número");
+      if(!tipo) return console.warn("No se envió el tipo a convertir");
+      if(typeof numero !== "number") return console.warn("No se puede recibir algo diferente a un número.");
+      if(typeof tipoBase !== "number") return console.warn("No se puede recibir algo diferente a un número en la base.");
+      
+
+      if (tipoBase === 2) {
+        if(numero = 0) return console.info(`El número en base binaria de ${numero} es 0`);
+        if(numero = 1) return console.info(`El número en base binaria de ${numero} es 1`);
+
+        return console.info(`El ${numero} en base ${tipoBase} es: ${parseInt(numero, base)}`);
+      } else if (tipoBase === 10) {
+        return console.info(`El ${numero} en base ${tipoBase} es: ${numero.toString(2)}`);
+      } else {
+        return console.log("El tipo de base a convertir no es válido.")
+      }
+    }
+
+    const aplicarDescuento = (numero = undefined, descuento = undefined) => {
+      if(numero === undefined) return console.warn("No se envío ninguna cantidad para aplicar descuento");
+      if(descuento === undefined) return console.warn("No se envío ningún porcentaje a descontar");
+      if(typeof numero !== "number") return console.warn("No se permite un tipo de valor diferente a número en el parámetro");
+      if(typeof descuento !== "number") return console.warn("No se permite un tipo de valor diferente a número en el parámetro");
+
+      return console.info(`El valor total a pagar es: ${(numero*descuento) / 100}`);
+    }
+
+    aplicarDescuento(200, 30);
+
+    const calcularAnios = (fecha = undefined) => {
+
+    }
+  </script>
+  
+  
+
+</body>
+</html>
